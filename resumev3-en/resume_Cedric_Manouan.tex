@@ -1,0 +1,430 @@
+%------------------------------------------------------------------------------
+% CV in Latex
+% Author : Charles Rambo
+% Based off of: https://github.com/sb2nov/resume and Jake's Resume on Overleaf
+% Most recently updated version may be found at https://github.com/fizixmastr 
+% License : MIT
+%------------------------------------------------------------------------------
+
+\documentclass[A4,11pt]{article}
+%\documentclass[letterpaper,14pt]{article} %For use in US
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage[super]{nth}
+\input{glyphtounicode}
+
+\begin{comment}
+I am by no means a professional when it comes to the CV's/resumes, I have
+received various trainings on how to write a CV and resume from my high 
+school, as well as the Austin College and University of Eastern Finland's
+career counseling departments. As I intend to share my CV as a template, I 
+feel that it is my responsibility to provide explanations of my work.
+\end{comment}
+
+
+%-----FONT OPTIONS-------------------------------------------------------------
+\begin{comment}
+The font of the document will impact not just how readable it is, but how it is
+perceived. In the "The Craft of Scientific Writing" by Michael Alley, shares a
+common fonts for publication as well as their use. I have chosen to use
+Palatino for its legibility, some others are given below. There is far too much
+about typography to discus here. Note: serif fonts have short projecting
+strokes, sans-serif fonts are sans (without) these strokes.
+\end{comment}
+
+
+% serif
+ \usepackage{palatino}
+% \usepackage{times} %This is the default as well
+% \usepackage{charter}
+
+% sans-serif
+% \usepackage{helvet}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+%-----PAGE SETUP---------------------------------------------------------------
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textheight}{2cm}
+
+% Margins for US Letter size
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+%\addtolength{\topmargin}{-.5in}
+%\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} % Uncomment for US
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%------------------------------------------------------------------------------
+% CV STARTS HERE  %
+%------------------------------------------------------------------------------
+\begin{document}
+
+%-----HEADING------------------------------------------------------------------
+% Without picture
+\begin{center}
+  \textbf{\LARGE \scshape Cedric P.-E. MANOUAN} \\ \vspace{1pt} %\scshape sets small capital letters, remove if desired
+  \small{\textbf{Contact : }+250 (0) 791 591 607} $|$
+  \href{mailto:cmanouan@alumni.cmu.edu}{\textbf{Email:} cmanouan@alumni.cmu.edu} $|$ \\
+  % Be sure to use a professional *personal* email address
+  \href{https://www.linkedin.com/in/cpem/} {\textbf{Linkedin:} Cédric pascal-emmanuel MANOUAN} $|$ 
+  % you should adjust you linked in profile name to be professional and recognizable
+  \href{https://github.com/dric2018/}{\textbf{Github:} dric2018}\\
+
+\end{center}
+
+%-----Summary----------------------------------------------------------------
+\section{Summary}
+
+Software/Machine learning engineer with a focus on deep learning for over 3 years. \\%Hard-worker with the ability to work independently and with a good team spirit. \\
+Experience in deep learning projects for Natural Language Processing and Computer Vision: end-to-end development from data preparation/exploration to model definition and optimization.
+\\Ability to evolve and work efficiently in a collaborative environment. %(even remotely).
+
+
+%-----EDUCATION----------------------------------------------------------------
+\section{Education}
+\CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Degree Achieved}{Years of Study}
+%      {Institution of Study}{Where it is located}
+\CVSubheading
+{{Master of Science $|$ \emph{\small{Information Technology - Applied Machine Learning}}}}{August 2021 -- May 2023}
+{Carnegie Mellon University}{Kigali, Rwanda}
+\CVSubheading
+{{Master of Science (Semester 7) $|$ \emph{\small{Information Systems and Software engineering}}}}{October 2019 -- March 2020}
+{Ecole Supérieure Africaine des TIC (ESATIC) }{Abidjan, Côte d'Ivoire}
+\CVSubheading
+{Bachelor of Science $|$ \emph{\small{Systems, Computer Networks and Telecommunications}}}{October 2016 -- September 2019}
+{Ecole Supérieure Africaine des TIC (ESATIC) - \href{https://drive.google.com/file/d/1AHcLovrqVw6Awh7r_sUYj2X1VdPfAZGq/view?usp=sharing}{See degree certificate here}}{Abidjan, Côte d'Ivoire}
+\CVSubHeadingListEnd
+
+%-----WORK EXPERIENCE----------------------------------------------------------
+\begin{comment}
+try to briefly explain what you did and why it is relevant to the position you
+are seeking
+\end{comment}
+
+\section{Work Experience}
+\CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+%      \CVItemListStart
+%        \CVItem{Why it is important to this employer}
+%      \CVItemListEnd
+\CVSubheading
+{Research Associate }{Summer 2023}
+{Carnegie Mellon University}{Kigali, Rwanda}
+\CVItemListStart
+\CVItem{Assisting Prof. David Vernon with the realization of the Situation Model Framework in \\
+the CRAM Cognitive Architecture using a Joint Episodic-Procedural-Semantic (JEPS) \\
+Associative Memory.}
+\CVItemListEnd
+
+\CVSubheading
+{Graduate Research and Teaching Assistant }{Fall 2022 - Spring 2023}
+{Carnegie Mellon University}{Kigali, Rwanda}
+\CVItemListStart
+\CVItem{Assisting Prof. Bhiksha Raj in 11785 - Introduction to Deep Learning: \\Natural Language \& Audio Processing}
+\begin{itemize}
+  \item Prepared and Co-Lead the \textit{Language Modeling} homework assignment in Fall 2022
+\end{itemize}
+\CVItem{Assisting Prof. Moise Busogi in Machine Learning for Earth Observation (ML4EO)}
+\CVItem{Research in Machine Learning for Earth Observation supervised by Dr. Moise Busogi}
+\CVItemListEnd
+
+% \CVSubheading
+% {Data science Intern}{Fall 2022}
+% {TIR}{Abidjan, Cote d’Ivoire}
+% \CVItemListStart
+% \CVItem{Implemented a Transformer-based OCR model line items extraction}
+% \CVItem{Developed an API that leverages the OCR for medical prescriptions \\ and general documents processing}
+% \CVItemListEnd
+
+\CVSubheading
+{Software engineering/Data science Intern }{May 2021 -- July 2021}
+{Zindi}{Remote}
+\CVItemListStart
+\CVItem{Data science competitions preparation}
+\CVItemListEnd
+
+\CVSubheading
+{Developer Intern (BSc. end project)}{April 2019 -- June 2019}
+{Project of Digital Solutions for the opening up of Rural Areas and E-Agriculture (PSNDEA)}{Abidjan, Côte d'Ivoire}
+\CVItemListStart
+\CVItem{Built an Internet of Things (IoT) system for data acquisition in a cassava field}
+\CVItem{Developed a REST CRUD API based on NodeJs and MySQL to store data from both \\sensors and farmers inputs}
+\CVItem{Developed a regression model to predict the yield of a given cassava field based on \\real-time and stored data}
+\CVItem{Deployed the machine leaning model to an edge device (Raspbery Pi 3) using tensorflowJS}
+\CVItemListEnd
+
+\CVSubHeadingListEnd
+
+%-----SKILLS-------------------------------------------------------------------
+\begin{comment}
+This section is compressed from the various skills sections that Euro CV
+recommends.
+\end{comment}
+
+\section{Skills}
+\begin{itemize}[leftmargin=0.5cm, label={}]
+  \small{\item{
+        \textbf{Languages}{: French (Native), English (Bilingual, Professional)} \\
+        \textbf{Programming}{:
+          \begin{itemize}
+            \item Python \\
+                  \begin{itemize}
+                    \item Data manipulation and visualization: Pandas, Plotly, Matplotlib, Seaborn
+                    \item Machine: NumPy, Scikit-learn, Lightgbm, Xgboost, Streamlit
+                    \item Deep learning: PyTorch, Transformers, Tensorflow/Keras
+                    \item API development: Flask, FastAPI
+                  \end{itemize}
+            \item C++
+              \begin{itemize}
+                \item Data structures and Algorithms
+              \end{itemize}
+            % \item Bash/task automation
+
+            % \item JavaScript
+            %       \begin{itemize}
+            %         \item Backend development with NodeJS
+            %       \end{itemize}
+            % \item HTML/CSS/web development (\textbf{intermediate})
+
+          \end{itemize}
+
+        }
+        % \textbf{Document Creation}{: Microsoft Office, LaTeX, Markdown} \\
+        % \textbf{Cloud computing / Code management / DevOps}{: Git, Docker, Amazon Web Services (EC2/ECS)} \\
+        % \textbf{Operating Systems}{: Ubuntu, Mac OS} \\
+        }}
+\end{itemize}
+
+%-----PROJECTS AND RESEARCH----------------------------------------------------
+\begin{comment}
+Ideally the title of the work should speak for what it is. However if you feel
+like you should explain more about why the project is applicable to this job,
+use item list as is shown in the work experience section.
+\end{comment}
+
+\section{Projects and Research}
+\CVSubHeadingListStart
+%    \CVSubheading
+%      {Title of Work}{When it was done}
+%      {Institution you worked with}{unused}
+\CVSubheading
+{{Course project - Recommender Systems} $|$ \emph{\small{CMU-Africa}}}{Fall 2022}
+{Developed a Content-Based Recommender system for scientific papers as part of my mini project \\
+in 04800-B Intro to Recommender Systems at Carnegie Mellon university-Africa.\\
+  \textbf{Project link} : \href{https://github.com/dric2018/ScietificPaperCBRS}{CBRS for scientific papers}
+}{}
+
+\CVSubheading
+{{Data science competition - Image classification} $|$ \emph{\small{ZINDI}}}{Fall 2020}
+{Developed a machine learning model to classify Tuberculosis and Normal X-Ray images \\
+  for an educational purpose. \\
+  \textbf{Ranking} : \nth{7}/104, \textbf{\href{https://zindi.africa/competitions/runmila-ai-institute-minohealth-ai-labs-tuberculosis-classification-via-x-rays-challenge/leaderboard}{Click and look for team DataLabCI on the leaderboard}} \\
+  \textbf{Project link} : \href{https://github.com/dric2018/ZindiTuberculosisClassification}{Tuberculosis X-Rays classification}
+}{}
+
+
+\CVSubheading
+{{Data science competition - Audio classification} $|$ \emph{\small{ZINDI}}}{Fall 2020}
+{Contributed to the development of a machine learning model to classify audio utterances \\
+  in Luganda and English from Uganda. \\
+  \textbf{Ranking} : \nth{7}/255, \textbf{\href{https://zindi.africa/competitions/giz-nlp-agricultural-keyword-spotter/leaderboard}{Click and look for team wakanda on the leaderboard}} \\
+  \textbf{Project link} : \href{https://github.com/NazarioR9/GIZ-NLP-Agricultural-Keyword-Spotter}{GIZ-NLP-Agricultural-Keyword-Spotter}
+}{}
+
+\CVSubheading
+{{Data science hackathon - Image classification} $|$ \emph{\small{ZINDI}}}{Fall 2020}
+{Contribued to the development of a machine learning model to identify whether a person in an image \\
+  is wearing a face mask or not. \\
+  \textbf{Ranking} : \nth{3}, \textbf{ \href{https://zindi.africa/competitions/spot-the-mask-challenge}{Click and look for team TheCIA on the leadernoard}} \\
+  \textbf{Project link} : \href{https://github.com/NazarioR9/Spot-the-Mask-challenge-3rd-Place}{Face mask classification}
+}{}
+
+\CVSubheading
+{{\nth{1} prize Hackathon Level 2 (48h) - Image recognition} $|$ \emph{\small{ESATIC}}}{May 2018}
+{Contributed to the development of a deep learning model to recognize West African \\
+bank notes and coins.
+
+}{}
+
+\CVSubheading
+{{\nth{1} prize Hackathon Level 1 (24h) - Cryptography} $|$ \emph{\small{ESATIC}}}{May 2017}
+{Contributed to research and writing (in C++) the encryption algorithm behind an executable program.
+
+}{}
+
+\CVSubHeadingListEnd
+
+%-----CONFERENCES AND PRESENTATIONS--------------------------------------------
+\begin{comment}
+Again the title should have already been enough, but if it is necessary to add
+descriptions maintain the consistency from prior sections
+\end{comment}
+
+%\section{Conferences and Presentations}
+%\CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Work Presented}{When}
+%      {Occasion}{}
+%\CVSubheading
+%{Photometric Filter Fidelity and Use for Be Star Identification}{November 2017}
+%{Austin College Physics Research Seminar}{}
+%\CVSubheading
+%{Reflectometry for Volumetric Soil Moisture Measurement}{May 2017}
+%{Austin College Atmospheric Physics Fair}{}
+%\CVSubheading
+%{Design and Manufacturing of Products using 3D Printing}{April 2017}
+%{Austin College Student Scholarship Conference}{}
+%\CVSubHeadingListEnd
+
+% %-----HONORS AND AWARDS--------------------------------------------------------
+% \section{Honors and Awards}
+% \CVSubHeadingListStart
+% %    \CVSubheading %Example
+% %      {What}{When}
+% %      {Short Description}{}
+
+% \CVSubheading
+% {Master Card Foundation Scholarship}{2021 -- 2023}
+% {Merit based scholarship to support international study experiences (at Carnegie Mellon University)}{}
+
+% \CVSubHeadingListEnd
+
+%-----TEACHING EXPERIENCE------------------------------------------------------
+\begin{comment}
+Section is here as it applied to my application for positions in academia.
+Remember to tailor the resume for to the position.
+\end{comment}
+
+%\section{Teaching Experience}
+%\CVSubHeadingListStart
+%    \CVSubheading
+%      {What}{When}
+%      {School}{Where}
+%\CVSubheading
+%{High School Physics (11 Weeks Teaching/Observing)}{Fall 2017}
+%{Denison High School}{Denison, TX}
+%\CVSubheading
+%{High School Calculus (11 Weeks Teaching/Observing)}{Fall 2017}
+%{Denison High School}{Denison, TX}
+%\CVSubheading
+%{High School Geometry (9 Weeks Teaching/Observing)}{Spring 2016}
+%{Sherman High School}{Sherman, TX}
+%\CVSubHeadingListEnd
+
+%-----COMMUNITY INVOLVEMENT----------------------------------------------------
+\section{Interests \& Community Involvement}
+\CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+\CVSubheading
+{NLP and Robotics}{Spring 2023}
+{Joint Episodic-Procedural-Semantic Associative Memory (JEPSAM)}{Rwanda, Kigali, CMU-Africa}
+\CVItemListStart
+\CVItem{Since Spring 2023, I have been contributing to the JEPSAM project. \\
+This project aims to provide an implementation of the Situation Model \\ 
+Framework for the Cognitive Robot Abstract Machine (CRAM).
+% The main objective of the JEPSAM project is to design and develop a system that can \\
+% help robots perform everyday tasks in a flexible and adaptive manner, \\“similar to how humans do”. \\
+% This will be achieved by using the CRAM architecture, which combines \\
+% several cognitive processes, including perception, reasoning, planning, and execution.
+}
+\CVItemListEnd
+
+\CVSubheading
+{Data Science Club}{December 2021 -- November 2022}
+{Lead and coordinator}{Rwanda, Kigali, CMU-Africa}
+\CVItemListStart
+\CVItem{Participants recruitment for Zindi UMOJAHACK 2022 (enrolled 30+ new users)}
+\CVItemListEnd
+
+\CVSubheading
+{Data Science Côte D'Ivoire}{2020 -- Present}
+{Free tutoring for local students/AI enthusiasts }{Côte d'Ivoire, remote}
+
+\CVSubheading
+{Zindi University ambassador}{June 2020 -- July 2021}
+{}{Côte d'Ivoire, remote}
+\CVItemListStart
+\CVItem{Participating in competitions and hackathons on the platform (username : \href{https://zindi.africa/users/\_MUFASA\_/}{\textbf{\_MUFASA\_}})}%, Top 100 among zindi data scientists}
+\CVItem{Co-lead of the platform development group (improvements and new ideas)}
+\CVItem{Participants recruitment for UMOJAHACK 2021 (enrolled 15+ new users)}
+\CVItemListEnd
+
+\CVSubheading
+{Co-founder of the Internet of Things and Artificial Intelligence club}{2019}
+{ESATIC}{Abidjan, Côte d'Ivoire}
+\CVSubHeadingListEnd
+
+% \section{Other qualities}
+% \CVItemListStart
+% \CVItem{Motivator \& Leader}
+% \CVItem{Initiative taker}
+% \CVItem{Problems solver}
+% \CVItemListEnd
+%------------------------------------------------------------------------------
+\end{document}
